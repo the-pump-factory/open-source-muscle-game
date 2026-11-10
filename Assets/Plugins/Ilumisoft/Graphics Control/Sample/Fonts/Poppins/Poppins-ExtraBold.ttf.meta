@@ -1,0 +1,43 @@
+fileFormatVersion: 2
+guid: 7a4f40e83d935d54bacd49e923f1a0c8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Poppins
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1470e8b5e3fb5a845a1ef195f3153981, type: 3}
+  - {fileID: 12800000, guid: d6096043cefb70244b563cac99ebba53, type: 3}
+  - {fileID: 12800000, guid: 49a98faf5f4057549bc790e989c41e96, type: 3}
+  - {fileID: 12800000, guid: 993159e388eca474aa46f1f8f3b6bd2b, type: 3}
+  - {fileID: 12800000, guid: 55bcc2b1fb1316743ae1148a5b6b1c2d, type: 3}
+  - {fileID: 12800000, guid: a7b7c58fa4e0b3348b8815442690c1ca, type: 3}
+  - {fileID: 12800000, guid: b458a0ec99a8ac44ca856a1afbd8d6d7, type: 3}
+  - {fileID: 12800000, guid: 529ff81a5b9bae84da70a810c1c02e2c, type: 3}
+  - {fileID: 12800000, guid: 2a334172a629ca4469f19be1f05cfac5, type: 3}
+  - {fileID: 12800000, guid: 22654d696ac364349b184b720aedae99, type: 3}
+  - {fileID: 12800000, guid: 940f758662b4cca4a81c28511cda3038, type: 3}
+  - {fileID: 12800000, guid: 7953c14cb1e7adb418f46cca80e68c10, type: 3}
+  - {fileID: 12800000, guid: d4f9cf3f05365e8488e11dabfef5288d, type: 3}
+  - {fileID: 12800000, guid: 3738ee413dbcfd648ae01d62ed242b52, type: 3}
+  - {fileID: 12800000, guid: 243b02d51de58eb4b8ba63f12d424233, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232111
+  packageName: Graphics Control
+  packageVersion: 1.1.4
+  assetPath: Assets/Plugins/Ilumisoft/Graphics Control/Sample/Fonts/Poppins/Poppins-ExtraBold.ttf
+  uploadId: 576753

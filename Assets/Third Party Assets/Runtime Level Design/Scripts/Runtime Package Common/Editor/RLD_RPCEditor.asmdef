@@ -1,0 +1,18 @@
+{
+    "name": "RLD_RPCEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e9bb99c2427d766489ddc3af99c5f6c5"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

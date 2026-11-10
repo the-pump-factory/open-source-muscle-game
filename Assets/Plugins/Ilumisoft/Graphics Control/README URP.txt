@@ -1,0 +1,2 @@
+In an URP project, please import the "Graphics Control URP" Unity package. 
+The default sample scene ( that has been created for the Built-In Renderpipeline) will be replaced by one created for the URP.

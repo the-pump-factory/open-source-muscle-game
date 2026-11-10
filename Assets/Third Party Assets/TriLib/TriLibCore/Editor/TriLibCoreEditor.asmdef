@@ -1,0 +1,18 @@
+{
+    "name": "TriLibEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:233f1007860ffdc4fb8d09fce8a8ccca"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

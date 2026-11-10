@@ -1,0 +1,26 @@
+{
+    "name": "Ilumisoft.GraphicsControl.URP",
+    "rootNamespace": "",
+    "references": [
+        "Ilumisoft.GraphicsControl",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "POST_PROCESSING_URP"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "1.0.0",
+            "define": "POST_PROCESSING_URP"
+        }
+    ],
+    "noEngineReferences": false
+}

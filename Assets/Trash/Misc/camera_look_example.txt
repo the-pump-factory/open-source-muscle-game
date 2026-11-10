@@ -1,0 +1,2 @@
+vars.cam = GetMainCamera
+vars.cam.rotation = LookRotation(vars.player.position - vars.cam.position)

@@ -1,0 +1,42 @@
+controller = CreateAsset(AnimationController, "rage")
+
+rageAnim = FindAsset(Animation, "engine.ception/rage_pos")
+swayAnim = FindAsset(Animation, "engine.ception/sway")
+
+rageRef = CreateAnimationReference("rage_pose", rageAnim, "Loop")
+swayRef = CreateAnimationReference("sway", swayAnim, "Loop")
+
+animRefs = [rageRef, swayRef]
+controller.animationReferences = animRefs
+
+rageLayer = CreateAnimationLayer("rageLayer")
+rageLayer.isAdditive = true
+rageLayer.mix = 1
+rageLayer.motionControllerIdentifiers = [{"index": 0, "type": "AnimationReference"}]
+rageStateMachine = CreateStateMachine("defaultState", 0)
+rageLayer.stateMachines = [rageStateMachine]
+
+swayLayer = CreateAnimationLayer("swayLayer")
+swayLayer.isAdditive = true
+swayLayer.mix = 1
+swayLayer.motionControllerIdentifiers = [{"index": 1, "type": "AnimationReference"}]
+swayStateMachine = CreateStateMachine("defaultState", 0)
+swayLayer.stateMachines = [swayStateMachine]
+
+
+controller.layers = [rageLayer, swayLayer]
+
+mainObj = FindSwoleGameObject(1)
+animator = mainObj.GetComponent(Animator)
+
+animator.ApplyController(controller)
+
+play_rageLayer = animator.FindLayer(rageLayer.name, controller)
+play_rageState = play_rageLayer.activeState
+play_rageController = play_rageLayer.GetMotionController(play_rageState.motionControllerIndex)
+play_rageController.speed = 1.153846
+
+play_swayLayer = animator.FindLayer(swayLayer.name, controller)
+play_swayState = play_swayLayer.activeState
+play_swayController = play_swayLayer.GetMotionController(play_swayState.motionControllerIndex)
+play_swayController.speed = 1.153846

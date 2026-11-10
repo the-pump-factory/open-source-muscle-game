@@ -1,0 +1,25 @@
+{
+    "name": "Ilumisoft.GraphicsControl.BuiltIn",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7f595fd175e67274183d17fac15b74c9",
+        "GUID:d60799ab2a985554ea1a39cd38695018"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "POST_PROCESSING_BUILT_IN"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.postprocessing",
+            "expression": "1.0.0",
+            "define": "POST_PROCESSING_BUILT_IN"
+        }
+    ],
+    "noEngineReferences": false
+}

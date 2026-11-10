@@ -1,0 +1,38 @@
+[Customization Lines]
+
+<concerned> Hmmmm.
+Well you're no fun.
+<annoyed> Heeeey! 
+
+That's more like it.
+That's the ticket!
+Oh yeah!
+Mmhmmm!
+<intrigued> Oooooohh! 
+
+[Normal Lines]
+
+It's Candy baby!
+It's Candy, baby.
+
+Huh?
+Anyone around?
+Helllloooooo!
+
+[Workout Lines]
+
+<lifing weights>
+
+<straining >
+
+[Roid Rage Lines]
+
+LET ME OUTTA HERE!
+
+I NEED MORE!
+I'LL GET IT MYSELF
+
+OUTTA' THE WAY!
+YOU CAN'T STOP ME!
+MOVE!
+OOPSIE!

@@ -1,0 +1,7 @@
+Your objective is to escape the Bulk Tech lab.
+
+Absord bulking serum and perform weight lifting to grow in strength.
+
+When you're ready, use your strength to escape. Actions that allow you to escape will trigger an alarm if they're noticed by lab workers.
+
+Once the alarm is triggered, you will have a set amount of time to escape before it's game over.

@@ -1,0 +1,6 @@
+Add Undo/Redo UI buttons to Level Builder
+
+Don't run physics step in level editor? Or perhaps allow control of it per object?
+
+Prefab builder
+Allows user to define position and rotation properties and visualize them in editor

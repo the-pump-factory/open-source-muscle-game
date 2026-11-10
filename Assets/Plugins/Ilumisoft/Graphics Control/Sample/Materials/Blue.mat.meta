@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 49ed5275dc212294dabf1045619e38d8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 0
+  packageName: Graphics Control URP
+  packageVersion: 1.1.4
+  assetPath: Assets/Plugins/Ilumisoft/Graphics Control/Sample/Materials/Blue.mat
+  uploadId: 576753

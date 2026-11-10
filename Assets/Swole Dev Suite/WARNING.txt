@@ -1,0 +1,2 @@
+This folder is prone to deletion or change! DO NOT STORE ANYTHING IN HERE!
+If you want the contents of this folder to remain even when the package 'Swole Dev Suite' is removed or updated, simply delete this file.

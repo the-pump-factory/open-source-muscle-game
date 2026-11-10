@@ -1,0 +1,3 @@
+[submodule "Assets/SwoleScript"]
+	path = Assets/SwoleScript
+	url = https://github.com/Myonaut/swole.git

@@ -1,0 +1,103 @@
+//import engine.ception
+
+controller = CreateAsset(AnimationController, "testRun")
+
+idleAnim = FindAsset(Animation, "engine.ception/idle")
+walkAnim = FindAsset(Animation, "engine.ception/walk")
+lookAnim = FindAsset(Animation, "engine.ception/look_around")
+poseAnim = FindAsset(Animation, "engine.ception/signature_pose")
+
+idleRef = CreateAnimationReference("idle", idleAnim, "Loop")
+walkRef = CreateAnimationReference("walk", walkAnim, "Loop")
+lookRef = CreateAnimationReference("look", lookAnim, "Loop")
+poseRef = CreateAnimationReference("pose", poseAnim, "Loop")
+
+animRefs = [idleRef, walkRef, lookRef, poseRef]
+controller.animationReferences = animRefs
+
+idleLayer = CreateAnimationLayer("idleLayer")
+idleLayer.isAdditive = true
+idleLayer.mix = 1
+idleLayer.motionControllerIdentifiers = [{"index": 0, "type": "AnimationReference"}]
+idleStateMachine = CreateStateMachine("defaultState", 0)
+idleLayer.stateMachines = [idleStateMachine]
+
+walkLayer = CreateAnimationLayer("walkLayer")
+walkLayer.isAdditive = true
+walkLayer.motionControllerIdentifiers = [{"index": 1, "type": "AnimationReference"}]
+walkStateMachine = CreateStateMachine("defaultState", 0)
+walkLayer.stateMachines = [walkStateMachine]
+
+lookLayer = CreateAnimationLayer("lookLayer")
+lookLayer.isAdditive = true
+lookLayer.motionControllerIdentifiers = [{"index": 2, "type": "AnimationReference"}]
+lookStateMachine = CreateStateMachine("defaultState", 0)
+lookLayer.stateMachines = [lookStateMachine]
+
+poseLayer = CreateAnimationLayer("poseLayer")
+poseLayer.isAdditive = true
+poseLayer.motionControllerIdentifiers = [{"index": 3, "type": "AnimationReference"}]
+poseStateMachine = CreateStateMachine("defaultState", 0)
+poseLayer.stateMachines = [poseStateMachine]
+
+
+controller.layers = [idleLayer, walkLayer, lookLayer, poseLayer]
+
+mainObj = FindSwoleGameObject(0)
+animator = mainObj.GetComponent(Animator)
+
+animator.ApplyController(controller)
+
+footL = animator.GetBone(animator.GetBoneIndex("foot.L"))
+footR = animator.GetBone(animator.GetBoneIndex("foot.R"))
+
+footL_audio = footL.gameObject.AddComponent(AudioSource)
+footL_audio.spatialBlend = 1
+footR_audio = footR.gameObject.AddComponent(AudioSource)
+footR_audio.spatialBlend = 1
+
+stomp1 = FindAsset(AudioAsset, "stomp1")
+stomp2 = FindAsset(AudioAsset, "stomp2")
+stomp3 = FindAsset(AudioAsset, "stomp3")
+stomps = [stomp1, stomp2, stomp3]
+
+stompListener = function(eventName)
+if eventName == "stomp_L" then
+footL_audio.PlayOneShot(stomps[RNG.RangeInt(0, len(stomps))])
+vars.spawnCrack(footL.position)
+else if eventName == "stomp_R" then
+footR_audio.PlayOneShot(stomps[RNG.RangeInt(0, len(stomps))])
+vars.spawnCrack(footR.position)
+end if
+end function
+
+play_idleLayer = animator.FindLayer(idleLayer.name, controller)
+play_poseLayer = animator.FindLayer(poseLayer.name, controller)
+play_walkLayer = animator.FindLayer(walkLayer.name, controller)
+play_walkState = play_walkLayer.activeState
+play_walkController = play_walkLayer.GetMotionController(play_walkState.motionControllerIndex)
+walkAnimationPlayer = play_walkController.animationPlayer
+walkAnimationPlayer.Listen(@stompListener)
+
+play_lookLayer = animator.FindLayer(lookLayer.name, controller)
+play_lookState = play_lookLayer.activeState
+play_lookController = play_lookLayer.GetMotionController(play_lookState.motionControllerIndex)
+play_lookLayer.mix = 0
+play_lookController.speed = 0
+play_lookState.time = 0
+
+
+vars.player = animator.gameObject
+vars.cam = GetMainCamera()
+vars.idleLayer = play_idleLayer
+vars.poseLayer = play_poseLayer
+vars.posing = 0
+vars.walkLayer = play_walkLayer
+vars.walkController = play_walkController
+vars.lookLayer = play_lookLayer
+vars.lookController = play_lookController
+vars.lookState = play_lookState
+vars.isLooking = false
+vars.lookTime = 0
+vars.lookCooldownStart = 3
+vars.lookCooldown = vars.lookCooldownStart

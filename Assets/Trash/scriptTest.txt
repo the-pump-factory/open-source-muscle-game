@@ -1,0 +1,24 @@
+//Hey
+import test.package
+import test.package
+  
+val = 0
+
+if var > 1 then var = 0
+import test.package.SwoleTest 
+if var == 0 then
+  yo = 5
+  if yo == 5 then
+    insert SwoleTest
+  end if
+end if
+
+while false
+ yo = yo + 1
+ insert test.package.SwoleTest
+end while
+ 
+for i in range(0, 5)
+ yo = yo + 1
+ import test.package.SwoleTest
+end for

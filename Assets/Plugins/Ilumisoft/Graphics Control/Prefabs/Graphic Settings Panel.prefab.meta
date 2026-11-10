@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2f64764278885e3438c7e7e3ebb84335
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 232111
+  packageName: Graphics Control
+  packageVersion: 1.1.4
+  assetPath: Assets/Plugins/Ilumisoft/Graphics Control/Prefabs/Graphic Settings Panel.prefab
+  uploadId: 576753

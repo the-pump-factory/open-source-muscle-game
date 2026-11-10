@@ -1,0 +1,78 @@
+{
+  "intents": [
+    {
+      "intent": "Greeting",
+      "text": [
+        "Hi",
+        "Hi there",
+        "Hola",
+        "Hello",
+        "Hello there",
+        "Hya",
+        "Hya there"
+      ]
+    },
+    {
+      "intent": "NameQuery",
+      "text": [
+        "What is your name?",
+        "What could I call you?",
+        "What can I call you?",
+        "What do your friends call you?",
+        "Who are you?",
+        "Tell me your name?"
+      ]
+    },
+    {
+      "intent": "TimeQuery",
+      "text": [
+        "What is the time?",
+        "What's the time?",
+        "Do you know what time it is?",
+        "Do you know the time?",
+        "Can you tell me the time?",
+        "Tell me what time it is?",
+        "Time"
+      ]
+    },
+	{
+      "intent": "MuscleCompliment",
+      "text": [
+        "Your arms are huge!",
+        "Wow! Your shoulders look like cannonballs!",
+        "Nice abs.",
+        "I just love your bulging biceps!",
+        "So many striations!",
+        "You're so big!",
+        "You're diced to the socks.",
+		"Look at those protruding pecs!",
+		"You have the body of a greek god!"
+      ]
+    },
+	{
+      "intent": "FlexQuery",
+      "text": [
+        "Will you flex for me?",
+        "Show me those muscles!",
+        "Let's see some poses!",
+        "Can I see your muscles?",
+        "Just how big are you?",
+        "What do those muscle look like in action?",
+		"Flex those muscles!",
+		"Get pumped up!"
+      ]
+    },
+	{
+      "intent": "BicepFlexQuery",
+      "text": [
+        "Can I see those massive peaks?",
+        "I want to go to the gun show!",
+        "Show me those biceps!",
+        "Flex those arms why don't you?",
+        "How high are your peaks?",
+        "How big are your biceps?",
+        "What about your biceps?"
+      ]
+    }
+  ]
+}

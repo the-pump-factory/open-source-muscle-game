@@ -1,0 +1,70 @@
+crackIdRange = [2, 10]
+debrisIdRange = [11, 100]
+
+vars.debris_pool = []
+addDebris = function(swoleId)
+obj = FindSwoleGameObject(swoleId)
+if obj == null then
+return
+end if
+obj.SetActive(false)
+body = obj.AddComponent(Rigidbody)
+vars.debris_pool.push(body)
+end function
+for i in range(debrisIdRange[0], debrisIdRange[1])
+addDebris(i)
+end for
+
+vars.tossExistingDebris = function(epicenter, falloff)
+for debris in vars.debris_pool
+offset = debris.position - epicenter
+factor = 1 - clamp(offset.magnitude / falloff, 0, 1)
+debris.AddForce(vec(0, RNG.Range(2, 3) * factor, 0), "VelocityChange")
+end for
+end function
+
+vars.nextDebrisIndex = 0
+vars.spawnDebris = function(position, radius)
+if vars.nextDebrisIndex >= len(vars.debris_pool) then
+vars.nextDebrisIndex = 0
+end if
+debris = vars.debris_pool[vars.nextDebrisIndex]
+debris.gameObject.SetActive(true)
+debris.gameObject.localScale = vec(RNG.Range(0.1, 0.7), RNG.Range(0.1, 0.7), RNG.Range(0.1, 0.7))
+debris.position = position + vec(RNG.Range(-radius, radius), 0, RNG.Range(-radius, radius))
+debris.velocity = vec(0, 0, 0)
+debris.AddForce(vec(0, 1, 0) + vec(RNG.Range(-3, 3), RNG.Range(-1, 1), RNG.Range(-3, 3)), "VelocityChange")
+vars.nextDebrisIndex = vars.nextDebrisIndex + 1
+end function
+
+vars.crack_pool = []
+addCrack = function(swoleId)
+obj = FindSwoleGameObject(swoleId)
+if obj == null then
+return
+end if
+obj.SetActive(false)
+obj.localScale = vec(0.01, 0.01, 0.01)
+vars.crack_pool.push(obj)
+end function
+for i in range(crackIdRange[0], crackIdRange[1])
+addCrack(i)
+end for
+
+vars.nextCrackIndex = 0
+vars.spawnCrack = function(position)
+if vars.nextCrackIndex >= len(vars.crack_pool) then
+vars.nextCrackIndex = 0
+end if
+crack = vars.crack_pool[vars.nextCrackIndex]
+crack.SetActive(true)
+pos = position + (vars.player.rotation * vec(0, -0.065, 0.4))
+crack.position = pos
+crack.rotation = EulerQuaternion(0, RNG.Range(0, 360), 0)
+crack.localScale = vec(0.35 + RNG.Range(-0.2,0.05), 0.35 + RNG.Range(-0.2,0.05), 0.35 + RNG.Range(-0.2,0.05))
+vars.nextCrackIndex = vars.nextCrackIndex + 1
+vars.tossExistingDebris(position, 5)
+for i in range(0, RNG.RangeInt(6, 8))
+vars.spawnDebris(pos, 0.5)
+end for
+end function
